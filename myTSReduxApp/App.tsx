@@ -2,117 +2,67 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
  * @format
+ * @flow
  */
 
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import React, {Component} from 'react';
+import {StyleSheet, View, Button, SafeAreaView, Text} from 'react-native';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as pageActions from './actions/pageList';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-declare var global: {HermesInternal: null | {}};
-
-const App = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.tsx</Text> to change
-                this screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
+class App extends Component {
+  incrementCount() {
+    let {actions} = this.props;
+    actions.getPageList();
+  }
+  render() {
+    const {pageList} = this.props;
+    return (
+      <SafeAreaView styles={styles.container}>
+        <Button title="Get Employees" onPress={() => this.incrementCount()} />
+        {pageList.map(employee => (
+          <View style={styles.employeeWrapper} key={employee.id}>
+            <Text style={styles.textCenter}>Employee_id : {employee.id}</Text>
+            <Text style={styles.textCenter}>
+              Employee Name : {employee.employee_name}
+            </Text>
+            <Text style={styles.textCenter}>
+              Employee Salary : {employee.employee_salary}
+            </Text>
+            <Text style={styles.textCenter}>
+              Employee Age : {employee.employee_age}
+            </Text>
           </View>
-        </ScrollView>
+        ))}
       </SafeAreaView>
-    </>
-  );
-};
+    );
+  }
+}
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
+  textCenter: {
+    textAlign: 'center',
   },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+  employeeWrapper: {
+    padding: 10,
+    borderBottomWidth: 1,
   },
 });
 
-export default App;
+const mapStateToProps = state => ({
+  pageList: state.pageList.pageList,
+});
+
+const ActionCreators = Object.assign({}, pageActions);
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(ActionCreators, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

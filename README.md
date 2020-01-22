@@ -11,3 +11,17 @@ $ react-native init myTSReduxApp --template react-native-template-typescript
 $ cd myTSReduxApp
 $ yarn add redux react-redux @types/react-redux redux-thunk typesafe-actions
 ```
+
+After cloning this repo, do the following to see the app in action:
+
+```
+$ cd {clone-repo}/myTSReduxApp
+$ yarn install
+$ react-native run-ios
+
+```
+
+Then press the "Get Employees" button and you'll see this displayed:
+
+
+![](ScreenShot.png)
