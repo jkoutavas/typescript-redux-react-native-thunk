@@ -8,4 +8,6 @@ This "myTSReduxApp" React Native App was generated using:
 
 ```
 $ react-native init myTSReduxApp --template react-native-template-typescript
+$ cd myTSReduxApp
+$ yarn add redux react-redux @types/react-redux redux-thunk typesafe-actions
 ```
