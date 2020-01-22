@@ -1,29 +1,34 @@
-import {GET_PAGE_LIST} from '../constants';
+import {EReduxActionTypes, IReduxBaseAction} from '../constants';
+import {ThunkAction, ThunkDispatch} from 'redux-thunk';
+
+export interface IReduxGetPageListAction extends IReduxBaseAction {
+  type: EReduxActionTypes.GET_PAGE_LIST;
+}
+
 export function setPageList(pageList) {
   return {
-    type: GET_PAGE_LIST,
+    type: EReduxActionTypes.GET_PAGE_LIST,
     payload: pageList,
   };
 }
-export function getPageList() {
-  return async dispatch => {
-    try {
-      const apiReq = await fetch(
-        'http://dummy.restapiexample.com/api/v1/employees',
-        {
-          method: 'GET',
-        },
-      )
-        .then(response => response.json())
-        .then(responseJson => {
-          dispatch(setPageList(responseJson.data));
-        })
-        .catch(error => {
-          console.error(error);
-        });
-      return apiReq || [];
-    } catch (error) {
-      console.error(error);
-    }
+
+// https://medium.com/@peatiscoding/typescripts-with-redux-redux-thunk-recipe-fcce4ffca405
+export function getPageList(): ThunkAction<
+  Promise<void>,
+  {},
+  {},
+  IReduxGetPageListAction
+> {
+  return async (
+    dispatch: ThunkDispatch<{}, {}, IReduxGetPageListAction>,
+  ): Promise<void> => {
+    await fetch('http://dummy.restapiexample.com/api/v1/employees')
+      .then(response => response.json())
+      .then(responseJson => {
+        dispatch(setPageList(responseJson.data));
+      })
+      .catch(error => {
+        console.error(error);
+      });
   };
 }

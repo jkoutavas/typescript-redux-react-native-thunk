@@ -1,10 +1,12 @@
-import {GET_PAGE_LIST} from '../constants';
+import {EReduxActionTypes} from '../constants';
+import {AnyAction} from 'redux';
+
 const initialState = {
   pageList: [],
 };
-const pageReducer = (state = initialState, action) => {
+const pageReducer = (state = initialState, action: AnyAction) => {
   switch (action.type) {
-    case GET_PAGE_LIST:
+    case EReduxActionTypes.GET_PAGE_LIST:
       return {
         ...state,
         pageList: action.payload,
