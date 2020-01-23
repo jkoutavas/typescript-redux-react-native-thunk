@@ -1,11 +1,11 @@
-import {EReduxActionTypes, IReduxBaseAction} from '../constants';
+import {EReduxActionTypes, IEmployee, IReduxBaseAction} from '../constants';
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 
 export interface IReduxGetPageListAction extends IReduxBaseAction {
   type: EReduxActionTypes.GET_PAGE_LIST;
 }
 
-export function setPageList(pageList) {
+export function setPageList(pageList: [IEmployee]) {
   return {
     type: EReduxActionTypes.GET_PAGE_LIST,
     payload: pageList,

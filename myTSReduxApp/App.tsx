@@ -6,11 +6,12 @@
  * @flow
  */
 
-import React, {Component} from 'react';
+import React, {Component, Dispatch} from 'react';
 import {StyleSheet, View, Button, SafeAreaView, Text} from 'react-native';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import {bindActionCreators, AnyAction, ActionCreatorsMapObject} from 'redux';
 import * as pageActions from './actions/pageList';
+import {IEmployee} from './constants';
 
 class App extends Component {
   incrementCount() {
@@ -20,9 +21,9 @@ class App extends Component {
   render() {
     const {pageList} = this.props;
     return (
-      <SafeAreaView styles={styles.container}>
+      <SafeAreaView>
         <Button title="Get Employees" onPress={() => this.incrementCount()} />
-        {pageList.map(employee => (
+        {pageList.map((employee: IEmployee) => (
           <View style={styles.employeeWrapper} key={employee.id}>
             <Text style={styles.textCenter}>Employee_id : {employee.id}</Text>
             <Text style={styles.textCenter}>
@@ -42,11 +43,6 @@ class App extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   textCenter: {
     textAlign: 'center',
   },
@@ -56,13 +52,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: any) => ({
   pageList: state.pageList.pageList,
 });
 
 const ActionCreators = Object.assign({}, pageActions);
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(ActionCreators, dispatch),
-});
+const mapDispatchToProps = (dispatch: any): any => {
+  return {actions: bindActionCreators(ActionCreators, dispatch)};
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

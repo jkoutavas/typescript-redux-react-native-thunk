@@ -5,3 +5,10 @@ export enum EReduxActionTypes {
 export interface IReduxBaseAction {
   type: EReduxActionTypes;
 }
+
+export interface IEmployee {
+  id: string;
+  employee_name: string;
+  employee_salary: string;
+  employee_age: string;
+}
