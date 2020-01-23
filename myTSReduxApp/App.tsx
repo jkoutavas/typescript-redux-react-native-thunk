@@ -11,16 +11,15 @@ import {StyleSheet, View, Button, SafeAreaView, Text} from 'react-native';
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, AnyAction} from 'redux';
 import * as pageActions from './actions/pageList';
-import {IEmployee} from './constants';
-import {IReduxGetPageListAction} from './actions/pageList';
+import {IEmployee, IStateModel} from './constants';
 
 interface IAppProps {
   actions: AnyAction;
-  pageList: [IEmployee];
+  pageList: IStateModel;
 }
 
 class App extends Component<IAppProps> {
-  getEmployees() {
+  getPageList() {
     let {actions} = this.props;
     actions.getPageList();
   }
@@ -28,7 +27,7 @@ class App extends Component<IAppProps> {
     const {pageList} = this.props;
     return (
       <SafeAreaView>
-        <Button title="Get Employees" onPress={() => this.getEmployees()} />
+        <Button title="Get Employees" onPress={() => this.getPageList()} />
         {pageList.map((employee: IEmployee) => (
           <View style={styles.employeeWrapper} key={employee.id}>
             <Text style={styles.textCenter}>Employee_id : {employee.id}</Text>
@@ -58,12 +57,16 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: IStateModel): IStateModel => ({
   pageList: state.pageList.pageList,
 });
 
-const ActionCreators = Object.assign({}, pageActions);
-const mapDispatchToProps = (dispatch: Dispatch<IReduxGetPageListAction>) =>
-  bindActionCreators(ActionCreators, dispatch);
+// TODO: lose some of these 'any' types
+const mapDispatchToProps = (dispatch: Dispatch<IStateModel>): any => ({
+  // NOTE: When using thunk action creators you need to use bindActionCreators
+  // https://github.com/piotrwitek/react-redux-typescript-guide#connect-with-react-redux
+  actions: bindActionCreators<any, any>(pageActions, dispatch),
+});
 
+// TODO: work-out the tslint warnings on the parameters on connect()
 export default connect(mapStateToProps, mapDispatchToProps)(App);

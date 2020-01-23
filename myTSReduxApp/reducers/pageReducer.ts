@@ -1,10 +1,15 @@
-import {EReduxActionTypes} from '../constants';
+import {EReduxActionTypes, IEmployee} from '../constants';
 import {AnyAction} from 'redux';
 
-const initialState = {
+interface IStateModel {
+  pageList: Array<IEmployee>;
+}
+
+const initialState: IStateModel = {
   pageList: [],
 };
-const pageReducer = (state = initialState, action: AnyAction) => {
+
+const pageReducer = (state: IStateModel = initialState, action: AnyAction) => {
   switch (action.type) {
     case EReduxActionTypes.GET_PAGE_LIST:
       return {

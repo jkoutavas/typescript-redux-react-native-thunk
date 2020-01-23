@@ -1,9 +1,10 @@
 import {EReduxActionTypes, IEmployee, IReduxBaseAction} from '../constants';
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
+import {action} from 'typesafe-actions';
 
-export interface IReduxGetPageListAction extends IReduxBaseAction {
-  type: EReduxActionTypes.GET_PAGE_LIST;
-}
+export const pageActions = {
+  get: () => action(EReduxActionTypes.GET_PAGE_LIST, {}),
+};
 
 export function setPageList(pageList: [IEmployee]) {
   return {
