@@ -1,9 +1,5 @@
-import {EReduxActionTypes, IEmployee} from '../constants';
+import {EReduxActionTypes, IStateModel} from '../constants';
 import {AnyAction} from 'redux';
-
-interface IStateModel {
-  pageList: Array<IEmployee>;
-}
 
 const initialState: IStateModel = {
   pageList: [],

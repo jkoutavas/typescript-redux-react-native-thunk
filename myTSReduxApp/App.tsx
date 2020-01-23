@@ -15,7 +15,7 @@ import {IEmployee, IStateModel} from './constants';
 
 interface IAppProps {
   actions: AnyAction;
-  pageList: IStateModel;
+  state: IStateModel;
 }
 
 class App extends Component<IAppProps> {
@@ -24,11 +24,11 @@ class App extends Component<IAppProps> {
     actions.getPageList();
   }
   render() {
-    const {pageList} = this.props;
+    const {state} = this.props;
     return (
       <SafeAreaView>
         <Button title="Get Employees" onPress={() => this.getPageList()} />
-        {pageList.map((employee: IEmployee) => (
+        {state.pageList.map((employee: IEmployee) => (
           <View style={styles.employeeWrapper} key={employee.id}>
             <Text style={styles.textCenter}>Employee_id : {employee.id}</Text>
             <Text style={styles.textCenter}>
@@ -57,12 +57,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = (state: IStateModel): IStateModel => ({
-  pageList: state.pageList.pageList,
+const mapStateToProps = (state: IStateModel): any => ({
+  state: state.pageList,
 });
 
 // TODO: lose some of these 'any' types
-const mapDispatchToProps = (dispatch: Dispatch<IStateModel>): any => ({
+const mapDispatchToProps = (dispatch: Dispatch<any>): any => ({
   // NOTE: When using thunk action creators you need to use bindActionCreators
   // https://github.com/piotrwitek/react-redux-typescript-guide#connect-with-react-redux
   actions: bindActionCreators<any, any>(pageActions, dispatch),

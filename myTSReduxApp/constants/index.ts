@@ -9,3 +9,7 @@ export interface IEmployee {
   employee_salary: string;
   employee_age: string;
 }
+
+export interface IStateModel {
+  pageList: Array<IEmployee>;
+}
