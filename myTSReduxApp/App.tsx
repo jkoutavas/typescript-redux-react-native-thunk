@@ -6,10 +6,10 @@
  * @flow
  */
 
-import React, {Component, Dispatch} from 'react';
+import React, {Component} from 'react';
 import {StyleSheet, View, Button, SafeAreaView, Text} from 'react-native';
 import {connect} from 'react-redux';
-import {bindActionCreators, AnyAction, ActionCreatorsMapObject} from 'redux';
+import {bindActionCreators} from 'redux';
 import * as pageActions from './actions/pageList';
 import {IEmployee} from './constants';
 
