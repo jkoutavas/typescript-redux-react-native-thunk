@@ -9,12 +9,18 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Button, SafeAreaView, Text} from 'react-native';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import {bindActionCreators, Dispatch, AnyAction} from 'redux';
 import * as pageActions from './actions/pageList';
 import {IEmployee} from './constants';
+import {IReduxGetPageListAction} from './actions/pageList';
 
-class App extends Component {
-  incrementCount() {
+interface IAppProps {
+  actions: AnyAction;
+  pageList: [IEmployee];
+}
+
+class App extends Component<IAppProps> {
+  getEmployees() {
     let {actions} = this.props;
     actions.getPageList();
   }
@@ -22,7 +28,7 @@ class App extends Component {
     const {pageList} = this.props;
     return (
       <SafeAreaView>
-        <Button title="Get Employees" onPress={() => this.incrementCount()} />
+        <Button title="Get Employees" onPress={() => this.getEmployees()} />
         {pageList.map((employee: IEmployee) => (
           <View style={styles.employeeWrapper} key={employee.id}>
             <Text style={styles.textCenter}>Employee_id : {employee.id}</Text>
@@ -57,8 +63,7 @@ const mapStateToProps = (state: any) => ({
 });
 
 const ActionCreators = Object.assign({}, pageActions);
-const mapDispatchToProps = (dispatch: any): any => {
-  return {actions: bindActionCreators(ActionCreators, dispatch)};
-};
+const mapDispatchToProps = (dispatch: Dispatch<IReduxGetPageListAction>) =>
+  bindActionCreators(ActionCreators, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
