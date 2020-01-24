@@ -1,11 +1,14 @@
-import {EReduxActionTypes, IStateModel} from '../constants';
-import {AnyAction} from 'redux';
+import {EReduxActionTypes, IStateModel, AActions} from '../constants';
+import {Reducer} from 'redux';
 
 const initialState: IStateModel = {
   pageList: [],
 };
 
-const pageReducer = (state: IStateModel = initialState, action: AnyAction) => {
+const pageReducer: Reducer<IStateModel, AActions> = (
+  state = initialState,
+  action,
+) => {
   switch (action.type) {
     case EReduxActionTypes.GET_PAGE_LIST:
       return {
@@ -16,4 +19,5 @@ const pageReducer = (state: IStateModel = initialState, action: AnyAction) => {
       return state;
   }
 };
+
 export default pageReducer;
