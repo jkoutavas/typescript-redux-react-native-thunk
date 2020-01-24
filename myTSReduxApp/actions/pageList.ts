@@ -24,6 +24,7 @@ type GetPageThunkAction = ThunkAction<
   {},
   GetPageListAction
 >;
+// TODO: handle the ActionCreator<GetPageThunkAction> linter error
 export const getPageList: ActionCreator<GetPageThunkAction> = function getPageList(): GetPageThunkAction {
   return async (
     dispatch: ThunkDispatch<{}, {}, GetPageListAction>,
