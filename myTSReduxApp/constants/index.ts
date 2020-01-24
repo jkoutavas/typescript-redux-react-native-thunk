@@ -10,7 +10,7 @@ export interface GetPageListAction extends Action<EReduxActionTypes> {
   payload: {};
 }
 
-export type AActions = GetPageListAction; // | FooAction | BarAction
+export type AllActions = GetPageListAction; // | FooAction | BarAction
 
 export interface IEmployee {
   id: string;
