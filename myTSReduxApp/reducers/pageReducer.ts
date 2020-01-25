@@ -1,11 +1,11 @@
-import {EReduxActionTypes, IStateModel, AActions} from '../constants';
+import {EReduxActionTypes, IStateModel, AllActions} from '../constants';
 import {Reducer} from 'redux';
 
 const initialState: IStateModel = {
   pageList: [],
 };
 
-const pageReducer: Reducer<IStateModel, AActions> = (
+const pageReducer: Reducer<IStateModel, AllActions> = (
   state = initialState,
   action,
 ) => {
