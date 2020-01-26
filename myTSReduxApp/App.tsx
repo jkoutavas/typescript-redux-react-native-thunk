@@ -57,16 +57,20 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = (state: IStateModel): any => ({
+const mapStateToProps = (state: IStateModel) => ({
   state: state.pageList,
 });
 
-// TODO: lose some of these 'any' types
-const mapDispatchToProps = (dispatch: Dispatch<any>): any => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
   // NOTE: When using thunk action creators you need to use bindActionCreators
   // https://github.com/piotrwitek/react-redux-typescript-guide#connect-with-react-redux
-  actions: bindActionCreators<any, any>(pageActions, dispatch),
+  actions: bindActionCreators(pageActions, dispatch),
 });
 
-// TODO: work-out the tslint warnings on the parameters on connect()
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+// TODO: work-out the tslint warning on the App parameter
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = ReturnType<typeof mapDispatchToProps>;
+export default connect<StateProps, DispatchProps, {}, IStateModel>(
+  mapStateToProps,
+  mapDispatchToProps,
+)(App);
