@@ -1,0 +1,21 @@
+on:
+  pull_request:
+  
+jobs:
+  tsc:
+    name: tsc
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: install node v13
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '13.x'
+        - name: yarn install
+        - run: yarn install
+        - name: tsc compile
+          uses: icrawl/action-tsc@v1
+          with:
+            project: myTSReduxApp
+        
+    
