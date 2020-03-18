@@ -9,7 +9,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '13.x'
-        run: yarn install
+      - run: yarn install
       - name: tsc compile
         uses: icrawl/action-tsc@v1
         with:
