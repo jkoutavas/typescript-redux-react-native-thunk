@@ -67,10 +67,11 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
   actions: bindActionCreators(pageActions, dispatch),
 });
 
-// TODO: work-out the tslint warning on the App parameter
 type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = ReturnType<typeof mapDispatchToProps>;
 export default connect<StateProps, DispatchProps, {}, IStateModel>(
   mapStateToProps,
   mapDispatchToProps,
+  // TODO: work-out the tslint warning on the App parameter
+  // @ts-ignore
 )(App);
