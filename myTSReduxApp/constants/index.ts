@@ -7,7 +7,7 @@ export enum EReduxActionTypes {
 
 export interface GetPageListAction extends Action<EReduxActionTypes> {
   type: typeof EReduxActionTypes.GET_PAGE_LIST;
-  payload: {};
+  payload: Array<IEmployee>;
 }
 
 export type AllActions = GetPageListAction; // | FooAction | BarAction
