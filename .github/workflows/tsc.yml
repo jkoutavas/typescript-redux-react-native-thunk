@@ -17,5 +17,6 @@ jobs:
         run: yarn install
       
       - name: tsc compile
-        working-directory: ./myTSReduxApp
         uses: icrawl/action-tsc@v1
+        with:
+          project: myTSReduxApp
