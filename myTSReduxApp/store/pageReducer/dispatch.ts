@@ -1,11 +1,11 @@
-import {IEmployee, IStateModel} from './type';
+import {Employee, StateModel} from './type';
 import {EReduxActionTypes, AllActions, GetPageListAction} from './action';
 
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {ActionCreator} from 'redux';
 
 export const setPageList: ActionCreator<AllActions> = function setPageList(
-  pageList: IEmployee[],
+  pageList: Employee[],
 ) {
   return {
     type: EReduxActionTypes.GET_PAGE_LIST,
@@ -16,12 +16,14 @@ export const setPageList: ActionCreator<AllActions> = function setPageList(
 // https://medium.com/@peatiscoding/typescripts-with-redux-redux-thunk-recipe-fcce4ffca405
 type GetPageThunkAction = ThunkAction<
   Promise<void>,
-  IStateModel,
+  StateModel,
   {},
   GetPageListAction
 >;
 // TODO: handle the ActionCreator<GetPageThunkAction> linter error
-export const getPageList: ActionCreator<GetPageThunkAction> = function getPageList(): GetPageThunkAction {
+export const getPageList: ActionCreator<
+  GetPageThunkAction
+> = function getPageList(): GetPageThunkAction {
   return async (
     dispatch: ThunkDispatch<{}, {}, GetPageListAction>,
   ): Promise<void> => {

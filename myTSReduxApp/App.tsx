@@ -11,11 +11,11 @@ import {StyleSheet, View, Button, SafeAreaView, Text} from 'react-native';
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, AnyAction} from 'redux';
 import * as pageActions from './store/pageReducer/dispatch';
-import {IEmployee, IStateModel} from './store/pageReducer/type';
+import {Employee, StateModel} from './store/pageReducer/type';
 
 interface IAppProps {
   actions: AnyAction;
-  state: IStateModel;
+  state: StateModel;
 }
 
 class App extends Component<IAppProps> {
@@ -28,7 +28,7 @@ class App extends Component<IAppProps> {
     return (
       <SafeAreaView>
         <Button title="Get Employees" onPress={() => this.getPageList()} />
-        {state.pageList.map((employee: IEmployee) => (
+        {state.pageList.map((employee: Employee) => (
           <View style={styles.employeeWrapper} key={employee.id}>
             <Text style={styles.textCenter}>Employee_id : {employee.id}</Text>
             <Text style={styles.textCenter}>
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = (state: IStateModel) => ({
+const mapStateToProps = (state: StateModel) => ({
   state: state.pageList,
 });
 
@@ -69,7 +69,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = ReturnType<typeof mapDispatchToProps>;
-export default connect<StateProps, DispatchProps, {}, IStateModel>(
+export default connect<StateProps, DispatchProps, {}, StateModel>(
   mapStateToProps,
   mapDispatchToProps,
   // TODO: work-out the tslint warning on the App parameter

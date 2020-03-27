@@ -1,21 +1,21 @@
-import {IEmployee, IStateModel} from './type';
+import {Employee, StateModel} from './type';
 import {Reducer} from 'redux';
 import {AllActions, EReduxActionTypes} from './action';
 
 // This module applies some of the material found in
 // https://blog.usejournal.com/writing-better-reducers-with-react-and-typescript-3-4-30697b926ada
 
-const initialState: IStateModel = {
+const initialState: StateModel = {
   pageList: [],
 };
 
-function updatePageList(state: IStateModel, payload: Array<IEmployee>) {
+function updatePageList(state: StateModel, payload: Array<Employee>) {
   return <const>{
     ...state,
     pageList: payload,
   };
 }
-type Action = ReturnType<typeof updatePageList> | IStateModel;
+type Action = ReturnType<typeof updatePageList> | StateModel;
 
 const pageReducer: Reducer<Action, AllActions> = (
   state = initialState,

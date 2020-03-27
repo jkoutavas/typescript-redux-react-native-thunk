@@ -1,10 +1,10 @@
-export interface IEmployee {
+export interface Employee {
   id: string;
   employee_name: string;
   employee_salary: string;
   employee_age: string;
 }
 
-export interface IStateModel {
-  pageList: Array<IEmployee>;
+export interface StateModel {
+  pageList: Array<Employee>;
 }

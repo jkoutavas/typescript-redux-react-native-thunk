@@ -1,5 +1,5 @@
 import {Action} from 'redux';
-import {IEmployee} from './type';
+import {Employee} from './type';
 
 // use typescript enum rather than action constants
 export enum EReduxActionTypes {
@@ -8,7 +8,7 @@ export enum EReduxActionTypes {
 
 export interface GetPageListAction extends Action<EReduxActionTypes> {
   type: typeof EReduxActionTypes.GET_PAGE_LIST;
-  payload: Array<IEmployee>;
+  payload: Array<Employee>;
 }
 
 export type AllActions = GetPageListAction; // | FooAction | BarAction
