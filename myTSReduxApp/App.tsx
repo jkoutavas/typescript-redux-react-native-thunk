@@ -10,8 +10,8 @@ import React, {Component} from 'react';
 import {StyleSheet, View, Button, SafeAreaView, Text} from 'react-native';
 import {connect} from 'react-redux';
 import {bindActionCreators, Dispatch, AnyAction} from 'redux';
-import * as pageActions from './actions/pageList';
-import {IEmployee, IStateModel} from './constants';
+import * as pageActions from './store/pageReducer/dispatch';
+import {IEmployee, IStateModel} from './store/pageReducer/type';
 
 interface IAppProps {
   actions: AnyAction;

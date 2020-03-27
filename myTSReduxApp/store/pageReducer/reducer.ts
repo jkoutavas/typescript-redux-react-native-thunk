@@ -1,10 +1,6 @@
-import {
-  EReduxActionTypes,
-  IEmployee,
-  IStateModel,
-  AllActions,
-} from '../constants';
+import {IEmployee, IStateModel} from './type';
 import {Reducer} from 'redux';
+import {AllActions, EReduxActionTypes} from './action';
 
 // This module applies some of the material found in
 // https://blog.usejournal.com/writing-better-reducers-with-react-and-typescript-3-4-30697b926ada

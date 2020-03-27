@@ -1,15 +1,11 @@
-import {
-  EReduxActionTypes,
-  IEmployee,
-  GetPageListAction,
-  AllActions,
-  IStateModel,
-} from '../constants';
+import {IEmployee, IStateModel} from './type';
+import {EReduxActionTypes, AllActions, GetPageListAction} from './action';
+
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {ActionCreator} from 'redux';
 
 export const setPageList: ActionCreator<AllActions> = function setPageList(
-  pageList: [IEmployee],
+  pageList: IEmployee[],
 ) {
   return {
     type: EReduxActionTypes.GET_PAGE_LIST,
