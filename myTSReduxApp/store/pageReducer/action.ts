@@ -6,11 +6,8 @@ export enum ActionTypes {
   GET_PAGE_LIST = 'GET_PAGE_LIST',
 }
 
-export type GetPageListOptions = {
-  pageList: Array<Employee>;
-};
 export const Actions = {
-  getPageList: (options: GetPageListOptions) =>
+  getPageList: (options: Array<Employee>) =>
     createAction(ActionTypes.GET_PAGE_LIST, options),
 };
 
