@@ -4,7 +4,3 @@ export interface Employee {
   employee_salary: string;
   employee_age: string;
 }
-
-export interface StateModel {
-  pageList: Array<Employee>;
-}

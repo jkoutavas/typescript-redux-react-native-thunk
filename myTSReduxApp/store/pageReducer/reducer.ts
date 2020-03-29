@@ -1,32 +1,22 @@
-import {Employee, StateModel} from './type';
-import {Reducer} from 'redux';
-import {AllActions, EReduxActionTypes} from './action';
+import {Actions} from '../type';
 
-// This module applies some of the material found in
-// https://blog.usejournal.com/writing-better-reducers-with-react-and-typescript-3-4-30697b926ada
+import {ActionTypes} from './action';
+import {Employee} from './type';
 
-const initialState: StateModel = {
-  pageList: [],
+export type PageReducerState = {
+  pageList: Array<Employee>;
 };
+const initialState: Readonly<PageReducerState> = {pageList: []};
 
-function updatePageList(state: StateModel, payload: Array<Employee>) {
-  return <const>{
-    ...state,
-    pageList: payload,
-  };
-}
-type Action = ReturnType<typeof updatePageList> | StateModel;
-
-const pageReducer: Reducer<Action, AllActions> = (
-  state = initialState,
-  action,
-) => {
+export function reducer(
+  state: PageReducerState = initialState,
+  action: Actions,
+): PageReducerState {
   switch (action.type) {
-    case EReduxActionTypes.GET_PAGE_LIST:
-      return updatePageList(state, action.payload);
+    case ActionTypes.GET_PAGE_LIST: {
+      return {pageList: action.payload};
+    }
     default:
       return state;
   }
-};
-
-export default pageReducer;
+}
