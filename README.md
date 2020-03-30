@@ -18,7 +18,7 @@ After cloning this repo, do the following to see the app in action:
 ```
 $ cd {clone-repo}/myTSReduxApp
 $ yarn install
-$ react-native run-ios
+$ npx react-native run-ios
 
 ```
 
