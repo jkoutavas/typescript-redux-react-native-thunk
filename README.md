@@ -2,6 +2,8 @@
 
 *Readme last updated March 29th, 2020*
 
+This repo has proven to run on node v13.10.1.
+
 After cloning this repo, do the following to see the app in action:
 
 ```
