@@ -5,10 +5,12 @@ import thunkMiddleware from 'redux-thunk';
 
 import {reducer} from './reducer';
 import {Store} from './type';
+import {ActionTypes} from './pageReducer';
 
 const composeEnhancers = compose;
 
-const store: Store = createStore(
+// @ts-ignore -- This will always fail because the react-navigation typings are incorrect
+const store: Store<ActionTypes> = createStore(
   reducer,
   composeEnhancers(applyMiddleware(thunkMiddleware)),
 );

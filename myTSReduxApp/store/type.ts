@@ -5,7 +5,7 @@ import * as pageReducer from './pageReducer';
 type AnyFunction = (...args: any[]) => any;
 type StringMap<T> = {[key: string]: T};
 
-export type Action<T extends string = string, P = void> = P extends void
+export type Action<T, P = void> = P extends void
   ? ReduxAction<T>
   : ReduxAction<T> & Readonly<{payload: P}>;
 
@@ -17,17 +17,17 @@ export type State = {
   pageReducer: ReturnType<typeof pageReducer.reducer>;
 };
 
-export type Store = ReduxStore<State, Action> & {
-  dispatch: Dispatch;
+export type Store<A> = ReduxStore<State, Action<A>> & {
+  dispatch: Dispatch<A>;
 };
 
-export type Dispatch = ThunkDispatch<State, void, Action>;
+export type Dispatch<A> = ThunkDispatch<State, void, Action<A>>;
 
 export type Actions = pageReducer.Actions;
 
-export type DispatchAction<T = void> = ThunkAction<
-  Promise<T>,
+export type DispatchAction<A, P> = ThunkAction<
+  Promise<P>,
   State,
   void,
-  Action
+  Action<A>
 >;

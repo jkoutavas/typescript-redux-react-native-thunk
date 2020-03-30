@@ -12,12 +12,12 @@ import {StyleSheet, View, Button, SafeAreaView, Text} from 'react-native';
 import {useDispatch} from 'react-redux';
 
 import {Dispatch} from './store/type';
-import {getPageListAction, usePageList} from './store/pageReducer';
+import {getPageListAction, usePageList, ActionTypes} from './store/pageReducer';
 import {Employee} from 'store/pageReducer/type';
 
 function EmployeeList(): JSX.Element {
   const pageList = usePageList();
-  const dispatch = useDispatch<Dispatch>();
+  const dispatch = useDispatch<Dispatch<ActionTypes>>();
   const callback = useCallback(() => dispatch(getPageListAction()), [dispatch]);
 
   return (
