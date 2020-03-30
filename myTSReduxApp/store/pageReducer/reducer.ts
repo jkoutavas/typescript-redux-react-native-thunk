@@ -1,6 +1,4 @@
 import {Actions} from '../type';
-
-import {ActionTypes} from './action';
 import {Employee} from './type';
 
 export type PageReducerState = {
@@ -13,7 +11,7 @@ export function reducer(
   action: Actions,
 ): PageReducerState {
   switch (action.type) {
-    case ActionTypes.GET_PAGE_LIST: {
+    case 'GET_PAGE_LIST': {
       return {pageList: action.payload};
     }
     default:
