@@ -17,14 +17,14 @@ import {Employee} from 'store/pageReducer/type';
 
 function EmployeeList(): JSX.Element {
   const pageList = usePageList();
-  const dispatch = useDispatch<Dispatch<ActionTypes>>();
+  const dispatch = useDispatch<Dispatch<ActionTypes, Employee[]>>();
   const callback = useCallback(() => dispatch(getPageListAction()), [dispatch]);
 
   return (
     <SafeAreaView>
       <Button title="Get Employees" onPress={() => callback()} />
       {pageList !== undefined &&
-        pageList.map((employee: Employee) => (
+        pageList.map(employee => (
           <View style={styles.employeeWrapper} key={employee.id}>
             <Text style={styles.textCenter}>Employee_id : {employee.id}</Text>
             <Text style={styles.textCenter}>

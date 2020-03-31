@@ -12,7 +12,7 @@ export const actions = {
 
 export type Actions = ActionsUnion<typeof actions>;
 
-export function getPageListAction(): DispatchAction<ActionTypes, void> {
+export function getPageListAction(): DispatchAction<ActionTypes, Employee[]> {
   return async dispatch => {
     await fetch('http://dummy.restapiexample.com/api/v1/employees')
       .then(response => response.json())

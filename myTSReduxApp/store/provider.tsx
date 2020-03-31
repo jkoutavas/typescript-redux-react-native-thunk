@@ -4,16 +4,15 @@ import {Provider} from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 
 import {reducer} from './reducer';
-import {Store} from './type';
-import {ActionTypes} from './pageReducer';
 
 const composeEnhancers = compose;
 
-// @ts-ignore -- This will always fail because the react-navigation typings are incorrect
-const store: Store<ActionTypes> = createStore(
+const store = createStore(
   reducer,
   composeEnhancers(applyMiddleware(thunkMiddleware)),
 );
+
+export type InferredStore = typeof store;
 
 type Props = {
   children: ReactNode;
