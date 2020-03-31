@@ -6,29 +6,25 @@
  * @flow
  */
 
-import React, {Component} from 'react';
+import React, {Component, useCallback} from 'react';
 import {StyleSheet, View, Button, SafeAreaView, Text} from 'react-native';
-import {connect} from 'react-redux';
-import {bindActionCreators, Dispatch, AnyAction} from 'redux';
-import * as pageActions from './actions/pageList';
-import {IEmployee, IStateModel} from './constants';
 
-interface IAppProps {
-  actions: AnyAction;
-  state: IStateModel;
-}
+import {useDispatch} from 'react-redux';
 
-class App extends Component<IAppProps> {
-  getPageList() {
-    let {actions} = this.props;
-    actions.getPageList();
-  }
-  render() {
-    const {state} = this.props;
-    return (
-      <SafeAreaView>
-        <Button title="Get Employees" onPress={() => this.getPageList()} />
-        {state.pageList.map((employee: IEmployee) => (
+import {Dispatch} from './store/type';
+import {getPageListAction, usePageList, ActionTypes} from './store/pageReducer';
+import {Employee} from 'store/pageReducer/type';
+
+function EmployeeList(): JSX.Element {
+  const pageList = usePageList();
+  const dispatch = useDispatch<Dispatch<ActionTypes, Employee[]>>();
+  const callback = useCallback(() => dispatch(getPageListAction()), [dispatch]);
+
+  return (
+    <SafeAreaView>
+      <Button title="Get Employees" onPress={() => callback()} />
+      {pageList !== undefined &&
+        pageList.map(employee => (
           <View style={styles.employeeWrapper} key={employee.id}>
             <Text style={styles.textCenter}>Employee_id : {employee.id}</Text>
             <Text style={styles.textCenter}>
@@ -42,10 +38,17 @@ class App extends Component<IAppProps> {
             </Text>
           </View>
         ))}
-      </SafeAreaView>
-    );
+    </SafeAreaView>
+  );
+}
+
+class App extends Component {
+  render() {
+    return <EmployeeList />;
   }
 }
+
+export default App;
 
 const styles = StyleSheet.create({
   textCenter: {
@@ -56,22 +59,3 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
 });
-
-const mapStateToProps = (state: IStateModel) => ({
-  state: state.pageList,
-});
-
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  // NOTE: When using thunk action creators you need to use bindActionCreators
-  // https://github.com/piotrwitek/react-redux-typescript-guide#connect-with-react-redux
-  actions: bindActionCreators(pageActions, dispatch),
-});
-
-type StateProps = ReturnType<typeof mapStateToProps>;
-type DispatchProps = ReturnType<typeof mapDispatchToProps>;
-export default connect<StateProps, DispatchProps, {}, IStateModel>(
-  mapStateToProps,
-  mapDispatchToProps,
-  // TODO: work-out the tslint warning on the App parameter
-  // @ts-ignore
-)(App);

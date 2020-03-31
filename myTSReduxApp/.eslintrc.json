@@ -1,0 +1,15 @@
+{
+  "root": true,
+  "extends": ["plugin:echobind/react-native"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "import/no-unresolved": "off",
+    "padding-line-between-statements": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/interface-name-prefix": "off" // we use "IDG" for some prefixes
+  }
+}
