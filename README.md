@@ -36,8 +36,8 @@ TypeScript static typing is then applied based on the guidelines at [react-redux
 
 ### Applied Joshua Avalon's type safety
 
-On March 31st, the project was moved-over to using redux/typescript scheme as defined here: https://joshuaavalon.io/create-type-safe-react-redux-store-with-typescript. There was a tsc error that needs to be resolved after applying the article's implementation. With the help of @vhesener it was sorted-out and we seem to have a good solid basis for a Redux implementation.
+On March 31st, the project was moved-over to using redux/typescript scheme as described in Joshua Avalon's [Create type-safe React Redux store with TypeScript](https://joshuaavalon.io/create-type-safe-react-redux-store-with-typescript) article. There was a tsc error that needs to be resolved after applying the article's implementation. With the help of @vhesener it was sorted-out and we seem to have a good solid basis for a Redux implementation, replacing the clunky [connect()-style Redux approach](https://react-redux.js.org/api/connect) with the [preferred hooks approach for dispatch, and selectors](https://react-redux.js.org/api/hooks).
 
-You can see the PR for this work at https://github.com/jkoutavas/typescript-redux-react-native-thunk/pull/5, along with some comments I've made about the new approach.
+[PR #5](https://github.com/jkoutavas/typescript-redux-react-native-thunk/pull/5) on this repository brought along this change, along with some comments I've made about the new approach.
 
 Thank you @joshuaavalon for the inspiration of this more elegant approach to structuring TypeScript-based Redux.
