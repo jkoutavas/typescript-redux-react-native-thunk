@@ -1,6 +1,6 @@
 # typescript-redux-react-native-thunk
 
-*Readme last updated March 31st, 2020*
+*Readme last updated April 1st, 2020*
 
 This repo has proven to run on node v13.10.1 and Cocopods v1.9.1
 
@@ -27,7 +27,7 @@ This React Native app is a Typescript version of [jkoutavas/redux-react-native-t
 This "myTSReduxApp" React Native App was generated using:
 
 ```
-$ react-native init myTSReduxApp --template react-native-template-typescript
+$ npx react-native init myTSReduxApp --template react-native-template-typescript
 $ cd myTSReduxApp
 $ yarn add redux react-redux @types/react-redux redux-thunk typesafe-actions
 ```
