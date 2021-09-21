@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* myTSReduxAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* myTSReduxAppTests.m */; };
+		01891A5D491846225A76701A /* libPods-myTSReduxApp-myTSReduxAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE442461FC3289C05EF3EAC2 /* libPods-myTSReduxApp-myTSReduxAppTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -16,10 +17,7 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* myTSReduxAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* myTSReduxAppTests.m */; };
-		6288F89AD26A43F1AFAD8F7B /* libPods-myTSReduxApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F24FE7B59F33BDEF87DAFE3 /* libPods-myTSReduxApp-tvOSTests.a */; };
 		9C89CC80E0E80E0F5785C9D9 /* libPods-myTSReduxApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5E1BE5423D65458DBD94D3 /* libPods-myTSReduxApp.a */; };
-		C539481CF1C22DA7B6DF67F2 /* libPods-myTSReduxAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A092C517B7C6743442353FE0 /* libPods-myTSReduxAppTests.a */; };
-		E9C1A5856315733CE411C78D /* libPods-myTSReduxApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6631BE796707759E27C886B1 /* libPods-myTSReduxApp-tvOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,16 +50,12 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = myTSReduxApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = myTSReduxApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = myTSReduxApp/main.m; sourceTree = "<group>"; };
-		1F24FE7B59F33BDEF87DAFE3 /* libPods-myTSReduxApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myTSReduxApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E47B1E0B4A5D006451C7 /* myTSReduxApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "myTSReduxApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* myTSReduxApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "myTSReduxApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62933BF57C6ABB1CC99B2979 /* Pods-myTSReduxAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myTSReduxAppTests.debug.xcconfig"; path = "Target Support Files/Pods-myTSReduxAppTests/Pods-myTSReduxAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6631BE796707759E27C886B1 /* libPods-myTSReduxApp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myTSReduxApp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		691E42120331CE903CE98D96 /* Pods-myTSReduxApp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myTSReduxApp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-myTSReduxApp-tvOS/Pods-myTSReduxApp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		6DE0256893161DBA5A15544A /* Pods-myTSReduxApp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myTSReduxApp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-myTSReduxApp-tvOS/Pods-myTSReduxApp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		A092C517B7C6743442353FE0 /* libPods-myTSReduxAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myTSReduxAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC92848D2D56ABC885A2B09D /* Pods-myTSReduxApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myTSReduxApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-myTSReduxApp-tvOSTests/Pods-myTSReduxApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B9BDDB62100962C51733C852 /* Pods-myTSReduxApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myTSReduxApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-myTSReduxApp-tvOSTests/Pods-myTSReduxApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		A764E6C5BD50B7F41C061141 /* Pods-myTSReduxApp-myTSReduxAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myTSReduxApp-myTSReduxAppTests.release.xcconfig"; path = "Target Support Files/Pods-myTSReduxApp-myTSReduxAppTests/Pods-myTSReduxApp-myTSReduxAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		AE442461FC3289C05EF3EAC2 /* libPods-myTSReduxApp-myTSReduxAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myTSReduxApp-myTSReduxAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B46EA9C02CB873422FD35BC3 /* Pods-myTSReduxApp-myTSReduxAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myTSReduxApp-myTSReduxAppTests.debug.xcconfig"; path = "Target Support Files/Pods-myTSReduxApp-myTSReduxAppTests/Pods-myTSReduxApp-myTSReduxAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBB4E8EDBA4B7B8605C23D12 /* Pods-myTSReduxApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myTSReduxApp.debug.xcconfig"; path = "Target Support Files/Pods-myTSReduxApp/Pods-myTSReduxApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DD5E1BE5423D65458DBD94D3 /* libPods-myTSReduxApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myTSReduxApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -74,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C539481CF1C22DA7B6DF67F2 /* libPods-myTSReduxAppTests.a in Frameworks */,
+				01891A5D491846225A76701A /* libPods-myTSReduxApp-myTSReduxAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9C1A5856315733CE411C78D /* libPods-myTSReduxApp-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +91,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6288F89AD26A43F1AFAD8F7B /* libPods-myTSReduxApp-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,9 +134,7 @@
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				DD5E1BE5423D65458DBD94D3 /* libPods-myTSReduxApp.a */,
-				6631BE796707759E27C886B1 /* libPods-myTSReduxApp-tvOS.a */,
-				1F24FE7B59F33BDEF87DAFE3 /* libPods-myTSReduxApp-tvOSTests.a */,
-				A092C517B7C6743442353FE0 /* libPods-myTSReduxAppTests.a */,
+				AE442461FC3289C05EF3EAC2 /* libPods-myTSReduxApp-myTSReduxAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -187,12 +177,10 @@
 			children = (
 				BBB4E8EDBA4B7B8605C23D12 /* Pods-myTSReduxApp.debug.xcconfig */,
 				139BA1513B419DBC4B9F8714 /* Pods-myTSReduxApp.release.xcconfig */,
-				691E42120331CE903CE98D96 /* Pods-myTSReduxApp-tvOS.debug.xcconfig */,
-				6DE0256893161DBA5A15544A /* Pods-myTSReduxApp-tvOS.release.xcconfig */,
-				AC92848D2D56ABC885A2B09D /* Pods-myTSReduxApp-tvOSTests.debug.xcconfig */,
-				B9BDDB62100962C51733C852 /* Pods-myTSReduxApp-tvOSTests.release.xcconfig */,
 				62933BF57C6ABB1CC99B2979 /* Pods-myTSReduxAppTests.debug.xcconfig */,
 				F83736E2912504048F74E6FA /* Pods-myTSReduxAppTests.release.xcconfig */,
+				B46EA9C02CB873422FD35BC3 /* Pods-myTSReduxApp-myTSReduxAppTests.debug.xcconfig */,
+				A764E6C5BD50B7F41C061141 /* Pods-myTSReduxApp-myTSReduxAppTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -209,6 +197,7 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				C3BD219EFF708898FC1AA676 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,6 +219,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				C04A19E390EA2744BC6A876E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,7 +234,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "myTSReduxApp-tvOS" */;
 			buildPhases = (
-				074E11FE92B9BB7EC19BFA7C /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -264,7 +253,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "myTSReduxApp-tvOSTests" */;
 			buildPhases = (
-				2BFA5247762825B44D6EBBBD /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -373,50 +361,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		074E11FE92B9BB7EC19BFA7C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-myTSReduxApp-tvOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2BFA5247762825B44D6EBBBD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-myTSReduxApp-tvOSTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -453,6 +397,42 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C04A19E390EA2744BC6A876E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-myTSReduxApp/Pods-myTSReduxApp-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-myTSReduxApp/Pods-myTSReduxApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3BD219EFF708898FC1AA676 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-myTSReduxApp-myTSReduxAppTests/Pods-myTSReduxApp-myTSReduxAppTests-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-myTSReduxApp-myTSReduxAppTests/Pods-myTSReduxApp-myTSReduxAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D2371CE7C9BEBAC7CD87EF4C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -468,7 +448,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-myTSReduxAppTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-myTSReduxApp-myTSReduxAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -580,7 +560,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62933BF57C6ABB1CC99B2979 /* Pods-myTSReduxAppTests.debug.xcconfig */;
+			baseConfigurationReference = B46EA9C02CB873422FD35BC3 /* Pods-myTSReduxApp-myTSReduxAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -603,7 +583,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F83736E2912504048F74E6FA /* Pods-myTSReduxAppTests.release.xcconfig */;
+			baseConfigurationReference = A764E6C5BD50B7F41C061141 /* Pods-myTSReduxApp-myTSReduxAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -662,7 +642,6 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 691E42120331CE903CE98D96 /* Pods-myTSReduxApp-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -690,7 +669,6 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DE0256893161DBA5A15544A /* Pods-myTSReduxApp-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -718,7 +696,6 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC92848D2D56ABC885A2B09D /* Pods-myTSReduxApp-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -745,7 +722,6 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9BDDB62100962C51733C852 /* Pods-myTSReduxApp-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -801,6 +777,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -854,6 +831,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
