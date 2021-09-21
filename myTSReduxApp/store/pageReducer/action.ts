@@ -1,6 +1,6 @@
-import {ActionsUnion, DispatchAction} from '../type';
-import {createAction} from '../action';
-import {Employee} from './type';
+import { ActionsUnion, DispatchAction } from '../type';
+import { createAction } from '../action';
+import { Employee } from './type';
 
 // A difference from Joshua's article:
 //  it's better to use union types then enum because they are easier to cast
@@ -13,13 +13,13 @@ export const actions = {
 export type Actions = ActionsUnion<typeof actions>;
 
 export function getPageListAction(): DispatchAction<ActionTypes, Employee[]> {
-  return async dispatch => {
+  return async (dispatch) => {
     await fetch('http://dummy.restapiexample.com/api/v1/employees')
-      .then(response => response.json())
-      .then(responseJson => {
+      .then((response) => response.json())
+      .then((responseJson) => {
         dispatch(actions.getPageList(responseJson.data));
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
       });
   };
