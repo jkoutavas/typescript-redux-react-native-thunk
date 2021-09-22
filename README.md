@@ -1,14 +1,18 @@
 # typescript-redux-react-native-thunk
 
-*Readme last updated April 1st, 2020*
+*Readme last updated September 22nd, 2021*
 
-This repo has proven to run on node v13.10.1 and Cocopods v1.9.1
+This React Native app is a Typescript version of [jkoutavas/redux-react-native-thunk](https://github.com/jkoutavas/redux-react-native-thunk). 
 
-After cloning this repo, do the following to see the app in action:
+This repo has proven to run on node v14.17.3, Android Studio Artic Fox, and Xcode 12.5.1
+
+After cloning this repo, do the following to see the app in action on iOS:
 
 ```
 $ cd {clone-repo}/myTSReduxApp
 $ yarn install
+$ cd ios
+$ pod install
 $ npx react-native run-ios
 
 ```
@@ -18,6 +22,18 @@ Then press the "Get Employees" button and you'll see this displayed:
 
 ![](ScreenShot.png)
 
+And for Android, do:
+
+```
+$ cd {clone-repo}/myTSReduxApp
+$ yarn install
+$ npx react-native run-android
+
+```
+
+Then press the "Get Employees" button and you'll see this displayed:
+
+![](ScreenShotAndroid.png)
 
 ## How this app was generated
 
